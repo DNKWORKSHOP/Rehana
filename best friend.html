@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Rehana ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      font-family: 'Dancing Script', cursive;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHeart 10s infinite ease-in;
+      opacity: 0.8;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(100vh) scale(0.5) rotate(45deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.2) rotate(45deg); opacity: 0; }
+    }
+
+    .intro-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      z-index: 2;
+      position: relative;
+    }
+
+    .intro-button button {
+      background-color: red;
+      color: white;
+      font-size: 2rem;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 0 20px red;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .intro-button button:hover {
+      transform: scale(1.1);
+    }
+
+    .letter-box {
+      display: none;
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 5% auto;
+      padding: 40px;
+      border: 2px solid red;
+      border-radius: 25px;
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 0 20px red;
+      text-align: center;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: red;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.8rem;
+    }
+
+    .heart-glow {
+      font-size: 40px;
+      color: red;
+      animation: glow 1.5s infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 5px red; }
+      50% { text-shadow: 0 0 20px red; }
+    }
+
+    .photo-container {
+      margin-bottom: 30px;
+    }
+
+    .photo-container img {
+      max-width: 200px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px red;
+      animation: pulsePhoto 3s infinite ease-in-out;
+    }
+
+    @keyframes pulsePhoto {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 15px red; }
+      50% { transform: scale(1.05); box-shadow: 0 0 30px red; }
+    }
+
+    .whatsapp-button {
+      margin-top: 30px;
+    }
+
+    .whatsapp-button a {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #25D366;
+    }
+
+    /* Fireworks */
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: red;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(20); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-hearts">
+  <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+  <div class="heart" style="left:30%; animation-delay: 2s;"></div>
+  <div class="heart" style="left:50%; animation-delay: 4s;"></div>
+  <div class="heart" style="left:70%; animation-delay: 1s;"></div>
+  <div class="heart" style="left:90%; animation-delay: 3s;"></div>
+</div>
+
+<div class="intro-button">
+  <button onclick="revealLetter()">To My Best Friend</button>
+</div>
+
+<div class="letter-box" id="letterBox">
+  <div class="photo-container">
+    <img src="rehana.jpg" alt="Rehana's Photo">
+  </div>
+  <h1>To My Beautiful Rehana <span class="heart-glow">❤️</span></h1>
+  <p>
+    In this life, I found a rare treasure — <strong>you</strong>. You shine brighter than stars and stronger than any storm. You’ve filled my world with love, laughter, and light.
+  </p>
+  <p>
+    No words are enough to tell you how much you mean to me. But through this little letter, I want to remind you — you are loved, valued, and irreplaceable.
+  </p>
+  <p>
+    Thank you for being the wonderful, beautiful soul that you are. I’m blessed every single day because of your friendship.
+  </p>
+  <div class="signature">With all my heart,<br>Your forever friend 💌</div>
+
+  <div class="whatsapp-button">
+    <a href="https://wa.me/+94718558020?text=Tnc%20My%20My%20Friend❤️" target="_blank">
+      Tnc my Best friend
+    </a>
+  </div>
+</div>
+
+<script>
+  function revealLetter() {
+    document.querySelector('.intro-button').style.display = 'none';
+    const box = document.getElementById('letterBox');
+    box.style.display = 'block';
+    triggerFireworks();
+  }
+
+  function triggerFireworks() {
+    for (let i = 0; i < 20; i++) {
+      const fw = document.createElement('div');
+      fw.className = 'firework';
+      fw.style.left = Math.random() * window.innerWidth + 'px';
+      fw.style.top = Math.random() * window.innerHeight + 'px';
+      document.body.appendChild(fw);
+      setTimeout(() => fw.remove(), 1000);
+    }
+  }
+</script>
+
+</body>
+</html>
